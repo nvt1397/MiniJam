@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: eec56fd4ef9738043873d4fb522f9aef
+guid: e479e447e4a79024d9621bec7df392cf
 TextureImporter:
   fileIDToRecycleName:
-    21300000: thodan-cung_0
-    21300002: thodan-cung_1
+    21300000: arrow_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -47,7 +46,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,41 +107,21 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: thodan-cung_0
+      name: arrow_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e360ef739e903046b9de2b82edf5d2c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thodan-cung_1
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 10
         y: 0
-        width: 32
-        height: 32
+        width: 14
+        height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf47e84efb073794fae928717a9727cf
+      spriteID: a27f2201dc083264cb405d4444006d54
       vertices: []
       indices: 
       edges: []
@@ -150,7 +129,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 29fb370137806054797823642f3a1c3d
+    spriteID: 9d5dde213c4d6074488c573da540d32a
     vertices: []
     indices: 
     edges: []
