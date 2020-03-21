@@ -9,12 +9,12 @@ public class ArrowFacePlayer : MonoBehaviour
     void Start()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player1").transform;
+        facePlayer1();
     }
 
     // Update is called once per frame
     void Update()
     {
-        facePlayer1();
     }
 
     public void facePlayer1()

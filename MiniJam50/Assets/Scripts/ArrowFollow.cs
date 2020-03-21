@@ -9,6 +9,7 @@ public class ArrowFollow : MonoBehaviour
     private Transform arrowPos;
     private Transform enemyPos;
     private GameObject GOArrow;
+    private Vector3 dir;
     //public float speed;
     void Start()
     {
@@ -16,13 +17,15 @@ public class ArrowFollow : MonoBehaviour
         enemyPos = GameObject.FindGameObjectWithTag("Enemy2").transform;
         arrowPos = GameObject.FindGameObjectWithTag("ArrowEnemy2").transform;
         GOArrow = GameObject.FindGameObjectWithTag("ArrowEnemy2");
+        dir = (playerPos.transform.position - transform.position).normalized;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position,  playerPos.transform.position, 1f * Time.deltaTime);
-        
+        //transform.position = Vector2.MoveTowards(transform.position,  dir, 3f * Time.deltaTime);
+        transform.position += dir * Time.deltaTime * 3f;
+        //transform.Translate(dir * 3f * Time.deltaTime);
     }
 
 }

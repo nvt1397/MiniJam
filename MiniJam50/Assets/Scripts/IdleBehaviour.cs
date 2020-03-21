@@ -20,6 +20,10 @@ public class IdleBehaviour : StateMachineBehaviour
         {
             animator.SetBool("isFollowing", true);
         }
+        else
+        {
+
+        }
 
     }
 

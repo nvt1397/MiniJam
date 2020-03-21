@@ -14,7 +14,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -35,13 +35,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 730d517156622f84688d036ba42e7267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Enemy2
   speed: 0.3
+  stoppingDistance: 1
 --- !u!114 &114774044174624188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49,13 +50,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e096dc547344d648b3427acd3fae22e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Enemy2
-  r: 2
+  r: 3
 --- !u!1101 &1101711249700371822
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

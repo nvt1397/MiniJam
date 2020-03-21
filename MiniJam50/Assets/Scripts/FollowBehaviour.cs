@@ -9,6 +9,7 @@ public class FollowBehaviour : StateMachineBehaviour
     private Vector3 oldEnemyPos;
     public string enemyName;
     public float speed;
+    public float stoppingDistance;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerPos = GameObject.FindGameObjectWithTag("Player1").transform;
@@ -17,7 +18,10 @@ public class FollowBehaviour : StateMachineBehaviour
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
+        if (Vector2.Distance(animator.transform.position, playerPos.transform.position) > stoppingDistance)
+        {
+            animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
+        }
         facePlayer1();
         float rFollow = Mathf.Sqrt(Mathf.Pow((playerPos.position.x - enemyPos.position.x), 2f) + Mathf.Pow((playerPos.position.y - enemyPos.position.y), 2f));
         if (rFollow > 2f)

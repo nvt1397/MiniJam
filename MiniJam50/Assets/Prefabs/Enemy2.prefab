@@ -1,5 +1,89 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &495861982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 495861983}
+  - component: {fileID: 495861984}
+  - component: {fileID: 495861985}
+  m_Layer: 0
+  m_Name: aroundFollow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &495861983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495861982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 683301522840105106}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &495861984
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495861982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.4357085, y: 0.65259415}
+      - {x: 2.1489143, y: 1.2666421}
+      - {x: 1.6546154, y: 1.902871}
+      - {x: 0.9485138, y: 2.2824037}
+      - {x: -0.23012686, y: 2.5027318}
+      - {x: -1.1289339, y: 2.2476814}
+      - {x: -1.7606916, y: 1.7934005}
+      - {x: -2.278101, y: 1.0505643}
+      - {x: -2.6143837, y: -0.4543395}
+      - {x: -0.28012538, y: -0.6102668}
+      - {x: 0.13331091, y: -0.6105131}
+      - {x: 2.594492, y: -0.58741033}
+--- !u!114 &495861985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495861982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bea7c2d2f4aa734eb6f21b626bf4ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  stoppingDistance: 1.5
+  enemy: {fileID: 683301522840105111}
 --- !u!1 &683301521802304356
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 683301521802304357}
   - component: {fileID: 683301521802304354}
+  - component: {fileID: 479228176}
   m_Layer: 0
   m_Name: EnemyAttack
   m_TagString: Untagged
@@ -44,6 +129,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GOArrow: {fileID: 4125633174068637152, guid: c6d3f26f085f3b74b968a7a63b6bc35c, type: 3}
+--- !u!60 &479228176
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683301521802304356}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.8172718, y: 0.76826173}
+      - {x: 1.5655375, y: 1.2521107}
+      - {x: 1.0222394, y: 1.686485}
+      - {x: -0.15478398, y: 1.903075}
+      - {x: -1.0049026, y: 1.5991037}
+      - {x: -1.7528431, y: 1.0491066}
+      - {x: -1.9213936, y: -0.077830434}
+      - {x: -0.61194634, y: -0.5230559}
+      - {x: -0.6442747, y: -0.50972676}
+      - {x: -0.36522534, y: -0.5892149}
+      - {x: 1.6251043, y: -0.51297045}
+      - {x: 2.0133595, y: -0.34661996}
+      - {x: 1.9755726, y: -0.39905524}
 --- !u!1 &683301522840105111
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +181,7 @@ GameObject:
   - component: {fileID: 683301522840105105}
   - component: {fileID: 683301522840105104}
   m_Layer: 0
-  m_Name: thodan-cung_0
+  m_Name: Enemy2
   m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,6 +199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 683301521802304357}
+  - {fileID: 495861983}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -159,9 +283,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.002244562, y: -0.02319473}
   serializedVersion: 2
-  m_Radius: 0.16
+  m_Radius: 0.07619968
 --- !u!50 &683301522840105104
 Rigidbody2D:
   serializedVersion: 4

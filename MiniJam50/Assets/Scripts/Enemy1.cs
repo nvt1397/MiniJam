@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtkEnemy1 : MonoBehaviour
+public class Enemy1 : MonoBehaviour
 {
     private Transform playerPos;
     public GameObject GOCut;
     private bool isAttacking;
+    private bool isFollowing = false;
+    private GameObject player;
     void Start()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player1").transform;
@@ -18,10 +20,9 @@ public class AtkEnemy1 : MonoBehaviour
     }
     void createArrow()
     {
-        float r = Mathf.Sqrt(Mathf.Pow((playerPos.position.x - transform.position.x), 2f) + Mathf.Pow((playerPos.position.y - transform.position.y), 2f));
-        if (r <= 0.1f && !isAttacking)
+        if (isFollowing && !isAttacking)
         {
-            StartCoroutine(Attack(0.5f));
+            StartCoroutine(Attack(1f));
         }
     }
     private IEnumerator Attack(float waitTime)
@@ -31,6 +32,22 @@ public class AtkEnemy1 : MonoBehaviour
         rgbClone = Instantiate(GOCut, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(waitTime);
         isAttacking = false;
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player1")
+        {
+            isFollowing = true;
+            player = collision.gameObject;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player1")
+        {
+            isFollowing = false;
+        }
     }
 }
