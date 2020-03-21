@@ -11,6 +11,7 @@ public class EnemyFollow : MonoBehaviour
     private bool isFollowing = false;
     private GameObject player;
     private Animator animator;
+    private bool isMoving = false;
     void Start()
     {
         animator = enemy.GetComponent<Animator>();
@@ -32,6 +33,14 @@ public class EnemyFollow : MonoBehaviour
         }
         else
         {
+            if (!isMoving)
+            {
+                StartCoroutine(RandomMove());
+            }
+            else
+            {
+                StopCoroutine(RandomMove());
+            }
             animator.SetBool("isFollowing", false);
         }
     }
@@ -49,5 +58,23 @@ public class EnemyFollow : MonoBehaviour
         {
             isFollowing = false;
         }
+    }
+    private IEnumerator RandomMove()
+    {
+        isMoving = true;
+        Vector3 dir = Random.insideUnitCircle * 2;
+        yield return new WaitForSeconds(2f);
+        Vector2 direction = new Vector2(dir.x - enemy.transform.position.x, dir.y - enemy.transform.position.y);
+        enemy.transform.up = direction;
+        Debug.Log(dir);
+        float i = 0.0f;
+        float rate = 2f;
+        while (i < 1.0f)
+        {
+            i += Time.deltaTime * rate;
+            enemy.transform.position = Vector2.Lerp(enemy.transform.position, dir, speed * Time.deltaTime);
+            yield return null;
+        }
+        isMoving = false;
     }
 }
