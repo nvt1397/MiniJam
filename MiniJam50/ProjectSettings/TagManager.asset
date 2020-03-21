@@ -8,6 +8,7 @@ TagManager:
   - Enemy1
   - Enemy2
   - ArrowEnemy2
+  - CutEnemy1
   layers:
   - Default
   - TransparentFX

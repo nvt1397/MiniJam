@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,10 @@ public class ArrowHit : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D collision)
+
+
+    //void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ArrowEnemy2")
         {

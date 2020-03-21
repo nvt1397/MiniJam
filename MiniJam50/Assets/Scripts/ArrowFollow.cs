@@ -24,6 +24,5 @@ public class ArrowFollow : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position,  playerPos.transform.position, 1f * Time.deltaTime);
         
     }
-    
 
 }
