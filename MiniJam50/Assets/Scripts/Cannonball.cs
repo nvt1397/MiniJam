@@ -45,6 +45,7 @@ public class Cannonball : MonoBehaviour
     void Hide()
     {
         transform.localScale = new Vector3(1,1,1);
+        //play explosion anim
         gameObject.SetActive(false);
     }
 

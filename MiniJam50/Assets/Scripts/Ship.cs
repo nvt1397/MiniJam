@@ -19,8 +19,6 @@ public class Ship : MonoBehaviour
     LineDraw line;
 
     public CameraController cam1;
-    int cannonBallnum = 10;
-
     public GameObject cannonBall;
 
 
@@ -86,13 +84,13 @@ public class Ship : MonoBehaviour
             cooldown = 3f;
             FireCannonball(line.endPos);
             line.endPos = line.startPos;
-            cannonBallnum -= 1;
         }
 
     }
 
 
     void FireCannonball(Vector2 target){
+        //play cannon effect
         Vector2 firePos = fireDir.position;
         GameObject ball = PoolManager.instance.ReuseObject(cannonBall, firePos, Quaternion.identity);
         Vector2 dir = (target - (Vector2)fireDir.position);

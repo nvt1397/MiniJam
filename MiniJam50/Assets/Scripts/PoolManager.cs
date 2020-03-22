@@ -25,7 +25,7 @@ public class PoolManager : MonoBehaviour
     public void CreatePool(GameObject prefab, int poolSize)
     {
         int poolKey = prefab.GetInstanceID();
-        Debug.Log("Pool" + prefab.name);
+        //Debug.Log("Pool" + prefab.name);
         if(!poolDictionary.ContainsKey(poolKey))
         {
             poolDictionary.Add(poolKey, new Queue<GameObject>());
