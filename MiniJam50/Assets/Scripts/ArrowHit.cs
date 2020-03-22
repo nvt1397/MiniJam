@@ -24,7 +24,7 @@ public class ArrowHit : MonoBehaviour
     {
         if (collision.gameObject.tag == "ArrowEnemy2")
         {
-            Debug.Log("hit player");
+            //Debug.Log("hit player");
             Destroy(collision.gameObject);
         }
     }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-
-    public float speed;
-    public float stoppingDistance;
+    public ParameterEnemy prmEnemy;
+    private float speed;
+    private float stoppingDistance;
     public GameObject enemy;
     private bool isFollowing = false;
     private GameObject player;
@@ -15,11 +15,14 @@ public class EnemyFollow : MonoBehaviour
     void Start()
     {
         animator = enemy.GetComponent<Animator>();
+        prmEnemy = prmEnemy.GetComponent<ParameterEnemy>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        speed = prmEnemy.speed;
+        stoppingDistance = prmEnemy.stoppingDistance;
         if (isFollowing)
         {
             //Debug.Log("enemy follow player");
@@ -62,13 +65,13 @@ public class EnemyFollow : MonoBehaviour
     private IEnumerator RandomMove()
     {
         isMoving = true;
-        Vector3 dir = Random.insideUnitCircle * 2;
+        Vector3 dir = Random.insideUnitCircle * 1.5f;
         yield return new WaitForSeconds(2f);
         Vector2 direction = new Vector2(dir.x - enemy.transform.position.x, dir.y - enemy.transform.position.y);
         enemy.transform.up = direction;
-        Debug.Log(dir);
+        //Debug.Log(dir);
         float i = 0.0f;
-        float rate = 2f;
+        float rate = 1f * speed;
         while (i < 1.0f)
         {
             i += Time.deltaTime * rate;

@@ -26,7 +26,7 @@ public class CutHit : MonoBehaviour
     private IEnumerator Waiting(float time, Collider2D col)
     {
         yield return new WaitForSeconds(time);
-        Debug.Log("cut hit");
+        //Debug.Log("cut hit");
         Destroy(col.gameObject);
     }
 }

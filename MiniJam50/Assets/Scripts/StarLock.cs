@@ -28,8 +28,8 @@ public class StarLock : MonoBehaviour
     }
     private IEnumerator Waiting(float time, Collider2D col)
     {
+        //Debug.Log("lock");
         yield return new WaitForSeconds(time);
-        Debug.Log("lock");
         rgbPlayer.constraints = RigidbodyConstraints2D.None;
         Destroy(col.gameObject);
     }
